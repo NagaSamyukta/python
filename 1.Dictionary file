@@ -1,0 +1,23 @@
+name = input("Enter file:")
+if len(name) < 1:
+    name = "mbox-short.txt"
+handle = open(name)
+from_name = list()
+occur = {}
+for ln in handle:
+    if ln.startswith('From '):
+        words= ln.strip().split()
+        from_name.append(words[1])
+    else:
+        continue
+for i in from_name:
+    occur[i]=occur.get(i,0)+1
+
+ke=None
+va=None
+for k in occur:
+    if ke is None or occur[k]>va:
+        ke=k
+        va=occur[k]
+    
+print(ke,va)
