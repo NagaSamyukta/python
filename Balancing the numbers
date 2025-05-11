@@ -1,0 +1,14 @@
+def return_missing_balanced_numbers(input):
+  tmp={}
+  n_tmp={}
+  for i in input:
+    tmp[i]=tmp.get(i,0)+1
+  sorted_tmp=sorted(tmp.items(), key=lambda item:item[1], reverse=True)  
+  max_n=sorted_tmp[0][1]
+  for k,v in sorted_tmp[1:]:
+    if v==max_n:
+      continue
+    else:
+      v=max_n-v
+      n_tmp[k]=v
+  return n_tmp
