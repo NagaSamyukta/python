@@ -1,0 +1,7 @@
+def fill_in_the_blanks(input_lst):
+  # Write your code here
+  lgt=len(input_lst)
+  for i in range(lgt):
+    if input_lst[i] == None:input_lst[i]=input_lst[i-1]
+    else:input_lst[i]=input_lst[i]
+  return input_lst
