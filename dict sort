@@ -1,0 +1,18 @@
+def return_smallest_key(inputDict, n):
+  # Write your code here
+  tmp=list()
+  dic={}
+  final=list()
+  
+  #sorted_pairs = sorted(inputDict.items(), key=lambda item: item[1])
+  #print(sorted_pairs)
+  
+  for k,v in inputDict.items():
+    tmp.append((v,k))
+  tmp=sorted(tmp)
+  for val,key in tmp[:]:
+    final.append((key,val))
+  
+  if n<=len(inputDict) and n!=0:
+    print(final[n-1][0])  
+    print(sorted_pairs[n-1][0])
