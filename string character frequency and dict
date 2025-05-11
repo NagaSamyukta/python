@@ -1,0 +1,8 @@
+def character_frequency(s, c):
+  tmp={}
+  for i in s:
+    tmp[i]=tmp.get(i,0)+1
+  if c in tmp.keys():
+    return tmp[c]
+  else:
+    return 0
