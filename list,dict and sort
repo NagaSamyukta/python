@@ -1,0 +1,14 @@
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        tmp={}
+        final=list()
+        for num in nums:
+            tmp[num]=tmp.get(num,0)+1
+        sorted_tmp=sorted(tmp.items(),key=lambda item:item[1], reverse=True)
+        for i in range(0,k):
+            final.append(sorted_tmp[i][0])
+        return final
